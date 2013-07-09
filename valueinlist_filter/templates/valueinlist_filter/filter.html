@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<h3>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
+<form class='valueinlist_form' method="GET" action="">
+    {{ spec.form.as_p }}
+    <script>
+        (function($){
+            $(function($){
+                $("form :input[name='{{ title }}__in']").change(function(){
+                    if(confirm("{% trans 'Refresh results ?' %}")){
+                        $(this).parents("form").submit();
+                    }
+                }).css("width", "100%");
+            });
+        })(django.jQuery);
+    </script>
+</form>
