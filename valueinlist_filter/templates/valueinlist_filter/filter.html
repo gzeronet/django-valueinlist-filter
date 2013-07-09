@@ -6,7 +6,7 @@
     <script>
         (function($){
             $(function($){
-                $("form :input[name='{{ title }}__in']").change(function(){
+                $("form :input[name='{{ spec.lookup_kwarg_in }}']").change(function(){
                     if(confirm("{% trans 'Refresh results ?' %}")){
                         $(this).parents("form").submit();
                     }
