@@ -6,15 +6,10 @@ Queryset can be filtered by a given list on the django admin page, just like: qs
 Installation
 ------------
 
-.. code-block:: bash
-
-    cd django-valueinlist-filter
-    python setup.py install
+    [sudo] pip install django-valueinlist-filter
 
 
 Add valueinlist_filter to settings.INSTALLED_APPS:
-
-.. code-block:: python
 
     INSTALLED_APPS = (
         ...
@@ -23,8 +18,6 @@ Add valueinlist_filter to settings.INSTALLED_APPS:
 
 And then, set a CharField field in a model like this:
 
-.. code-block:: python
-
     class Model(models.Model):
         ...
         serial_number = models.CharField(max_length=32)
@@ -32,7 +25,6 @@ And then, set a CharField field in a model like this:
 
 If you want to filter the **serial_number** field by a given value list(split string by space), you can bind ValueInListFilter to this field:
 
-.. code-block:: python
 
     from valueinlist_filter.filter import ValueInListFilter
     from django.contrib import admin
@@ -45,3 +37,5 @@ If you want to filter the **serial_number** field by a given value list(split st
         )
 
 Finally, you will get a textarea form on the filter side bar, the textarea's change event will trigger form.
+
+Added a 'screenshot.png' picture.
